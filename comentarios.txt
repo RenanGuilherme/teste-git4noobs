@@ -10,6 +10,8 @@ Cada diretório de trabalho do Git é um repositório com um histórioco
 completo e habilidade total de acompanhamento das revisões, não 
 dependente de acesso a uma rede ou a um serividor central.
 
+git init	\\ Criando repositório git
+
 O que é Commit?
 
 Um commit significa a adição, alteração ou remoção de um ou mais 
