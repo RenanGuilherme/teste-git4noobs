@@ -1,0 +1,110 @@
+Comentários git4noobs
+
+O que é Git?
+
+Git é um sistema de controle de versão de arquivos. Através dele 
+podemos desenvolver projetos no qual diversas pessoas podem contribuir 
+simultaneamente, sem o risco de suas alterações serem sobrescritas.
+
+Cada diretório de trabalho do Git é um repositório com um histórioco 
+completo e habilidade total de acompanhamento das revisões, não 
+dependente de acesso a uma rede ou a um serividor central.
+
+O que é Commit?
+
+Um commit significa a adição, alteração ou remoção de um ou mais 
+arquivos dentro do seu repositório.
+
+Enquanto você trabalha em um projeto, você pode editar e salvar 
+arquivos no seu repositório quantas vezes você quiser. E em certo 
+ponto, você de- cide commitar suas alterações para o repositório.
+
+git add nomedoarquivo		\\ Adicionando o arquivo
+git commit -m nomedoarquivo	\\ Fazendo o commit
+-m -> mensagem
+
+O que é Branch?
+
+Um "universo" paralelo ao "universo principal" master, criado a partir do 
+último commit feito, onde é possível fazer alterações sem perder ou 
+quebrar conteúdo da branch master.
+
+git checkout -b nomedabranch	\\ Criando uma nova branch
+-b -> branch
+
+git branch	\\ Mostra todas as branchs
+
+Por que separar em branchs?
+
+A branch master é onde normalmente está o ambiente de produção, nesse 
+ambiente tudo deve estar funcionando 100%. Separar o ambiente de 
+desenvolvimento do ambiente de produção evita que funcionalidades 
+adicionadas quebrem o código.
+
+O que é Merge?
+
+É a junção de diferentes branchs, sem afetar o conteúdo existente.
+
+git checkout master			\\ Voltando para a branch master
+git merge nomedabranch		\\ Juntando o conteúdo de uma branch
+				para a branch em que o usuário está.
+
+O que é Status?
+
+É um comando simples para saber qual branch você se encontra, quais 
+arquivos foram alterados e também quais arquivos já estão prontos para 
+serem commitados.
+
+git status
+
+Esse comando da uma visão geral de tudo que está acontecendo no 
+repositório que irá afetar algo ou não no seu proximo commit.
+
+Se um arquivo foi modificado e commitado antes de visualizar seu 
+status, nehuma mudança será apontada.
+
+O que é Diff?
+
+Compara a última versão do arquivo commitada para comparar com o 
+arquivo que o usuário está alterando no momento.
+
+git diff nomedoarquivo
+
+O sinal "+" significa tudo que foi adicionado ao documento;
+O sinal "-" significa tudo que foi removido do documento;
+
+
+---------------------- Demonstração de um GitFlow ----------------------
+
+Master - branch responsável pelo ambiente que roda em Produção. 
+ -> Hotfix(es) - responsável por corrigir algum erro crítico quem impeça 
+o cliente de executar alguma função em ambiente de produção.
+
+Releases - branch responsável por gerenciar e documentar todas as 
+alterações feitas a cada deploy.
+ -> Bugfix(es) - responsável por corrigir bugs pequenos em ambiente de 
+ desenvolvimento (develop) ou homologação (release).
+
+Develop - branch onde sempre será criada e/ou mergeadas novas features.
+ -> bugfix(es)
+
+Features - branch responsável por desenvolver estórias do projeto.
+
+Tasks - branch relacionada a uma feature (estória) descrevendo sempre 
+um objetivo a ser trabalhado (features "quebradas" em partes).
+------------------------------------------------------------------------
+
+O que é uma release?
+
+Release é o compilado de alterações feitas no sistema onde é atribuído 
+uma tag de versionamento. Quando aparecem os números "1.2.15" em 
+softwares, geralmente cada um desses dígitos quer te dizer algo.
+
+O pirmeiro digito é para o breaking change release, mais conhecido 
+como que altera toda a estrutura do projeto.
+
+O segundo digito será para releases de projeto (compilado de novas 
+features).
+
+O terceiro dígito será para correção de bugfixes e alterações não 
+agendadas referentes a release.
