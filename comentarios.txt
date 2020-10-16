@@ -75,6 +75,17 @@ git diff nomedoarquivo
 O sinal "+" significa tudo que foi adicionado ao documento;
 O sinal "-" significa tudo que foi removido do documento;
 
+O que é tag?
+
+Comando utilizado para versionar projetos. O formato padrão é: Vx.y.z, 
+sendo:
+V -> sigla para a palavra versão
+x -> Major, repesenta a versão principal do projeto.
+y -> Minor, representa adições de novas funcionalidades.
+z -> Patchs, representa correções de bugs no sistema.
+
+git tag vx.y.z		\\ Cria uma tag
+git tag -d vx.y.z	\\ Apaga uma tag.
 
 ---------------------- Demonstração de um GitFlow ----------------------
 
@@ -110,3 +121,10 @@ features).
 
 O terceiro dígito será para correção de bugfixes e alterações não 
 agendadas referentes a release.
+
+O que é o Push?
+
+Usado para mandar o conteúdo git local para o diretório na nuvem (github).
+
+git remote add origin link-urldorepositório	\\ Aponta para o repositório
+git push origin nomedoarquivo \\ Envia o arquivo, branch, etc para o cloud.
